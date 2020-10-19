@@ -8,8 +8,8 @@
                 <div class="row">
                     <div class="col-lg-8 col-md-10 mx-auto">
                         <div class="site-heading">
-                        <h1>Malalacake</h1>
-                        <span class="subheading">Made With Love</span>
+                        <h1>Shop</h1>
+                        <span class="subheading">A Blog Theme by Start Bootstrap</span>
                     </div>
                 </div>
             </div>
@@ -35,17 +35,6 @@
                 </div>
 
                 <hr>
-
-                <div class="post-preview">
-                    <a href="post.html">
-                        <h2 class="post-title">
-                        I believe every human has a finite number of heartbeats. I don't intend to waste any of mine.
-                        </h2>
-                    </a>
-                    <p class="post-meta">Posted by
-                        <a href="#">Start Bootstrap</a>
-                        on September 18, 2019</p>
-                </div>
 
                 <hr>
 
@@ -80,11 +69,6 @@
                 </div>
 
                 <hr>
-
-                <!-- Pager -->
-                <div class="clearfix">
-                    <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
-                </div>
             </div>
         </div>
     </div>
