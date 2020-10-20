@@ -32,3 +32,7 @@ Route::get('/about', function () {
 Route::get('/admin', function () {
     return view('admin');
 })->middleware(['auth']);
+
+Route::fallback(function () {
+    return redirect("/");
+});
