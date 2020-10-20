@@ -30,7 +30,7 @@ Route::get('/about', function () {
 })->name('about');
 
 Route::get('/admin', function () {
-    return view('admin');
+    return view('admin\index');
 })->middleware(['auth']);
 
 Route::fallback(function () {
