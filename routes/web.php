@@ -29,10 +29,22 @@ Route::get('/about', function () {
     return view('about');
 })->name('about');
 
-Route::get('/admin', function () {
-    return view('admin\index');
-})->middleware(['auth']);
+
+use App\Http\Controllers\AdminController;
+Route::get('/admin', [AdminController::class, 'index'])->middleware(['auth'])->name('admin');
+
+use App\Http\Controllers\ProductsController;
+//auth admin view
+Route::get('/admin/product/create', [ProductsController::class, 'create'])->middleware(['auth'])->name('productCreate');
+Route::post('/admin/product/create', [ProductsController::class, 'createAjax'])->middleware(['auth']);
+Route::get('/admin/product/list', [ProductsController::class, 'index'])->middleware(['auth'])->name('productList');
+
+
+
+//guest view
+Route::get('/product', [ProductsController::class, 'show'])->name('show');
 
 Route::fallback(function () {
     return redirect("/");
 });
+
