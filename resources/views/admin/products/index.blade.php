@@ -54,7 +54,7 @@
                             <td>{{$product->price}}</td>
                             <td>{{$product->description}}</td>
                             <td><img src="{{$product->image_url}}" width="100" height="100" /></td>
-                            <td>{{$product->user_id}}</td>
+                            <td>{{$product->userName['name']}}</td>
                             <td>......</td>
                         </tr>
                     @endforeach

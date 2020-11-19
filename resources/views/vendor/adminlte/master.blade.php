@@ -32,6 +32,9 @@
         <link rel="stylesheet" href="{{ mix(config('adminlte.laravel_mix_css_path', 'css/app.css')) }}">
     @endif
 
+    {{--CKEDITOR--}}
+    <script src="https://cdn.ckeditor.com/4.15.1/standard/ckeditor.js"></script>
+
     {{-- Livewire Styles --}}
     @if(config('adminlte.livewire'))
         @if(app()->version() >= 7)

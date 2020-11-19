@@ -256,27 +256,22 @@ return [
             'label'       => 4,
             'label_color' => 'success',
         ],
+        ['header' => 'ADMIN PANEL'],
         [
-            'text'    => 'Admin Panel',
-            'icon'    => 'fas fa-fw fa-share',
+            'text' => 'Products',
+            'icon'    => '',
             'submenu' => [
-                [
-                    'text' => 'Products',
-                    'icon'    => '',
-                    'submenu' => [
-                        [
-                            'text' => 'List Products',
-                            'icon'    => '',
-                            'url' => '/admin/product/list',
-                        ],
-                        [
-                            'text' => 'Create Products',
-                            'icon'    => '',
-                            'url' => '/admin/product/create',
-                        ],
+                    [
+                        'text' => 'List Products',
+                        'icon'    => '',
+                        'url' => '/admin/product/list',
+                    ],
+                    [
+                        'text' => 'Create Products',
+                        'icon'    => '',
+                        'url' => '/admin/product/create',
                     ],
                 ],
-            ],
         ],
         ['header' => 'account_settings'],
         [
@@ -481,6 +476,21 @@ return [
             ],
         ],
         'Pace' => [
+            'active' => false,
+            'files' => [
+                [
+                    'type' => 'css',
+                    'asset' => false,
+                    'location' => '//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/blue/pace-theme-center-radar.min.css',
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => false,
+                    'location' => '//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js',
+                ],
+            ],
+        ],
+                'Pace' => [
             'active' => false,
             'files' => [
                 [

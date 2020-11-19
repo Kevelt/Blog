@@ -28,7 +28,7 @@
     <li>
         <a class="btn btn-default btn-flat float-right btn-block"
             href="shop">
-            <i class="fa fa-fw fa-power-off"></i>
+            <i class="fas fa-shopping-cart"></i>
             Shop
         </a>
     </li>

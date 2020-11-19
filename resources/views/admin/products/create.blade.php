@@ -12,12 +12,12 @@
     </div>
 
     <div class="form-group">
-        <label for="price">price</label>
+        <label for="price">Precio</label>
         <input type="text" class="form-control" name="price" required placeholder="price..." value="{{ old('price')}}">
         <span class="invalid-feedback" role="alert"></span>
     </div>
     <div class="form-group">
-        <label for="description">inserte descipcion</label>
+        <label for="description">inserte descripcion</label>
         <textarea class="form-control" name="description" required placeholder="Enter ...">{{ old('description')}}</textarea>
         <span class="invalid-feedback" role="alert"></span>
     </div>
@@ -33,4 +33,8 @@
         </div>
         </div>
     </div>
+
+    <script>
+        CKEDITOR.replace( 'description' );
+    </script>
 @stop

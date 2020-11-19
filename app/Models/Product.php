@@ -26,4 +26,9 @@ class Product extends Model
     protected $hidden = [
         'user_id',
     ];
+
+    public function userName()
+    {
+        return $this->belongsTo( 'App\Models\User', 'user_id');
+    }
 }
