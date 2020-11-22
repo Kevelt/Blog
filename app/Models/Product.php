@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\HtmlString;
 
 class Product extends Model
 {
@@ -30,5 +31,10 @@ class Product extends Model
     public function userName()
     {
         return $this->belongsTo( 'App\Models\User', 'user_id');
+    }
+
+    public function getDescription()
+    {
+        return new HtmlString($this->description);
     }
 }

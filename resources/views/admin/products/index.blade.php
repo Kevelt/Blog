@@ -52,10 +52,13 @@
                             <td>{{$product->id}}</td>
                             <td>{{$product->title}}</td>
                             <td>{{$product->price}}</td>
-                            <td>{{$product->description}}</td>
+                            <td>{{$product->getDescription()}}</td>
                             <td><img src="{{$product->image_url}}" width="100" height="100" /></td>
                             <td>{{$product->userName['name']}}</td>
-                            <td>......</td>
+                            <td>
+                            <a href="{{ route('productEdit', $product->id ) }}"><i class="fa fa-edit"></i> </a>
+                            <a href="{{ route('productDel', $product->id ) }}" class="delete-ajax"><i class="fa fa-trash-alt"></i></a>
+                            </td>
                         </tr>
                     @endforeach
                     </tbody>

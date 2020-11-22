@@ -45,7 +45,7 @@
         @endif
         <div class="card-body">
             @hasSection('content_form')
-                <form class="customform" action="@yield('content_form_action')">
+                <form class="customform" action="@yield('content_form_action')" @yield('content_form_attr')>
                     @csrf
                     @yield('content_form')
 

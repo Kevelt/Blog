@@ -55,6 +55,53 @@ class ProductsController extends Controller
         return response()->json(['success'=>true, 'message'=>'Success']);
     }
 
+    public function edit(Request $request)
+    {
+        $product = Product::find($request->id);
+        if($product) {
+            return view('admin.products.edit', ['product' => $product]);
+        }
+        return redirect()->route('productList');
+    }
+
+    public function updateAjax(Request $request)
+    {
+        $this->validate($request, [
+            'title' => 'required',
+            'price'=>'required',
+            'description' => 'required'
+        ]);
+
+        $data = $request->all();
+        unset($data['_token']);
+        if(isset($data['image_url'][0])) {
+            $data['image_url'] = $data['image_url'][0];
+        } else {
+            unset($data['image_url']);
+        }
+
+        $result = Product::whereId($data['id'])->update($data) ? true : false;
+        return response()->json(['success'=>$result, 'message'=>$result?'Success':'Fail']);
+    }
+
+    public function deleteAjax(Request $request)
+    {
+        $product = Product::find($request->id);
+        if ($product) {
+            if(Product::destroy($request->id)) {
+                return response()->json(['success'=>true, 'message'=>'Success']);
+            }
+            else {
+                return response('Error Delete', 400);
+            }
+        }
+        else {
+            return response('Product Not Found', 404);
+        }
+
+        //$result = Product::whereId($data['id'])->update($data) ? true : false;
+        //return response()->json(['success'=>$result, 'message'=>$result?'Success':'Fail']);
+    }
 
     /**
      * Display the specified resource.

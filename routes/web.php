@@ -38,6 +38,9 @@ use App\Http\Controllers\ProductsController;
 Route::get('/admin/product/create', [ProductsController::class, 'create'])->middleware(['auth'])->name('productCreate');
 Route::post('/admin/product/create', [ProductsController::class, 'createAjax'])->middleware(['auth']);
 Route::get('/admin/product/list', [ProductsController::class, 'index'])->middleware(['auth'])->name('productList');
+Route::get('/admin/product/edit/{id}', [ProductsController::class, 'edit'])->middleware(['auth'])->name('productEdit');
+Route::post('/admin/product/edit/{id}', [ProductsController::class, 'updateAjax'])->middleware(['auth']);
+Route::get('/admin/product/del/{id}', [ProductsController::class, 'deleteAjax'])->middleware(['auth'])->name('productDel');
 
 
 
