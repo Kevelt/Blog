@@ -105,7 +105,7 @@ const addArrows = (ele) => {
     // ArrowLeft
     const arrowsRight = document.createElement('button');
     arrowsRight.classList.add('glide__arrow', 'glide__arrow--right');
-    arrowsRight.setAttribute('data-glide-dir', '<');
+    arrowsRight.setAttribute('data-glide-dir', '>');
     arrowsRight.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10"><path d="M1.5 0v2.025l3.977 2.932L1.5 8.062V10l7-4.84z" fill="#9561e2" />';
     arrowsWrapper.appendChild(arrowsRight);
 

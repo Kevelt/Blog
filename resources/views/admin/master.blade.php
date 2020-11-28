@@ -27,9 +27,9 @@
     </li>
     <li>
         <a class="btn btn-default btn-flat float-right btn-block"
-            href="shop">
+            href="{{ route('welcome') }}">
             <i class="fas fa-shopping-cart"></i>
-            Shop
+            Catalog
         </a>
     </li>
 @stop

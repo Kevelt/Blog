@@ -5355,7 +5355,7 @@ var addArrows = function addArrows(ele) {
 
   var arrowsRight = document.createElement('button');
   arrowsRight.classList.add('glide__arrow', 'glide__arrow--right');
-  arrowsRight.setAttribute('data-glide-dir', '<');
+  arrowsRight.setAttribute('data-glide-dir', '>');
   arrowsRight.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10"><path d="M1.5 0v2.025l3.977 2.932L1.5 8.062V10l7-4.84z" fill="#9561e2" />';
   arrowsWrapper.appendChild(arrowsRight);
   ele.appendChild(arrowsWrapper);
@@ -5423,7 +5423,7 @@ window.addEventListener('load', function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! Q:\PracticasLaravel\LaravelBlog\resources\js\custom.js */"./resources/js/custom.js");
+module.exports = __webpack_require__(/*! C:\Kevelt\Blog\resources\js\custom.js */"./resources/js/custom.js");
 
 
 /***/ })

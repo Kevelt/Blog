@@ -13,4 +13,10 @@
 @import '~startbootstrap-clean-blog/scss/clean-blog.scss';
 
 // GlideJS
-@import 'glide';
+@import 'custom/glide';
+
+// Carousel
+@import 'custom/carousel';
+
+// Card
+@import 'custom/card';

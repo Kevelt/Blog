@@ -1,26 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
 
-.carousel-item {
-  width: 100%;
-  height: 25vw;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-.carousel-item__d-block img-fluid {
-  width: 100%;
-  height: 25vw;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-.card-img-top {
-  width: 100%;
-  height: 15vw;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
 /*!
  * Bootstrap v4.5.3 (https://getbootstrap.com/)
  * Copyright 2011-2020 The Bootstrap Authors
@@ -11536,6 +11515,36 @@ footer .copyright {
 .glide__glide__slide {
   width: 100%;
   height: 30vw;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.glide__glide__slide .image_url_img {
+  width: 100%;
+  height: 100%;
+}
+
+.carousel {
+  height: 25vw;
+}
+
+.carousel-inner {
+  height: 100%;
+}
+
+.carousel-item {
+  height: 100%;
+}
+
+.carousel-item .img-fluid {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.card-img-top {
+  width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }

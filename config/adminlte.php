@@ -273,6 +273,22 @@ return [
                     ],
                 ],
         ],
+        [
+            'text' => 'Categories',
+            'icon'    => '',
+            'submenu' => [
+                    [
+                        'text' => 'List Categories',
+                        'icon'    => '',
+                        'url' => '/admin/category/list',
+                    ],
+                    [
+                        'text' => 'Create Category',
+                        'icon'    => '',
+                        'url' => '/admin/category/create',
+                    ],
+                ],
+        ],
         ['header' => 'account_settings'],
         [
             'text' => 'profile',

@@ -20,21 +20,3 @@ $cyan: #6cb2eb;
 
 //Icon Custom
 $arrow--right: '<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10"><path d="M1.5 0v2.025l3.977 2.932L1.5 8.062V10l7-4.84z" fill="#9561e2" /></svg>';
-
-.carousel-item {
-    width: 100%;
-    height: 25vw;
-    object-fit: cover;
-
-    &__d-block img-fluid {
-        width: 100%;
-        height: 25vw;
-        object-fit: cover;
-    }
-}
-
-.card-img-top {
-    width: 100%;
-    height: 15vw;
-    object-fit: cover;
-}

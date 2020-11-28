@@ -5,11 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\HtmlString;
+use Illuminate\Database\Eloquent\Scope;
 
 class Product extends Model
 {
     use HasFactory;
 
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class);
+    }
             /**
      * The attributes that are mass assignable.
      *
@@ -36,5 +41,10 @@ class Product extends Model
     public function getDescription()
     {
         return new HtmlString($this->description);
+    }
+
+    public function scopePopular($query)
+    {
+        return $query->where('votes', '>', 100);
     }
 }
