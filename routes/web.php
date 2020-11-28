@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,8 +16,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $products = \App\Models\Product::all();
+    return view('welcome', ['products' => $products]);
 });
+/* AQUI ESTA EL WELCOME
+Cambialo por un controlador propio tipo
+//Route::get('/admin/product/list', [ProductsController::class, 'index'])->middleware(['auth'])->name('productList');
+ó crea una un componente ProductsShop o similar que solo lo llames en cualquier vista y te de una lista de productos
+ó pasale un parametro que es lo mas facil antes del return view, algo como, $products = \App\Models\Product;
+//Route::get('/', function () {
+//    $products = \App\Models\Product::all();
+//    return view('welcome', ['products' => $products]);
+//});
+*/
 
 Route::get('/shop', function () {
     return view('shop');
