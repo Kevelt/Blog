@@ -7,13 +7,6 @@ use Illuminate\View\Component;
 class Label extends Component
 {
     /**
-     * The label title.
-     *
-     * @var string
-     */
-    public $title;
-
-    /**
      * Name associated with the label.
      *
      * @var string
@@ -27,10 +20,9 @@ class Label extends Component
      * @param  string  $name default:null
      * @return void
      */
-    public function __construct($title, $name = null)
+    public function __construct($name = null)
     {
         $this->name = $name;
-        $this->title = $title;
     }
 
     /**
@@ -41,7 +33,7 @@ class Label extends Component
     public function render()
     {
         return <<<'blade'
-            <label{{ $name ? " for=$name" : '' }}>{{ $title }}</label>
+            <label {{ $attributes->merge(['class' => '']) }} {{ $name ? "for=$name" : '' }}>{{ $slot }}</label>
         blade;
     }
 }

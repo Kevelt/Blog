@@ -10,13 +10,8 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        /*
-        $products = (Auth::user()->rol == 1)
-        ? Category::all()
-        : Category::where('user_id', Auth::user()->user)->get();
+        $categories = Category::all();
         return view('admin.categories.index', ['categories'=>$categories]);
-        */
-        return view('admin.categories.index');
     }
 
     public function create()
@@ -27,13 +22,12 @@ class CategoryController extends Controller
     public function createAjax(Request $request)
     {
         $this->validate($request, [
-            'title' => 'required',
+            'name' => 'required',
         ]);
 
         $data = $request->all();
         $data['user_id'] = Auth::user()->id;
-        $data['image_url'] = $data['image_url'][0];
-        Product::create($data);
-        return response()->json(['success'=>true, 'message'=>'Success']);
+        //Product::create($data);
+        return response()->json(['success'=>true, 'message'=>'Success', 'data'=>$data]);
     }
 }

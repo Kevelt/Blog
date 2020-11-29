@@ -16,9 +16,7 @@ class ProductsController extends Controller
     public function index()
     {
 
-        $products = (Auth::user()->rol == 1)
-        ? Product::all()
-        : Product::where('user_id', Auth::user()->user)->get();
+        $products = Product::all();
         return view('admin.products.index', ['products'=>$products]);
 
         return view('admin.products.index');
