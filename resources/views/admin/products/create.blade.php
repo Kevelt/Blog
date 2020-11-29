@@ -5,40 +5,17 @@
 
 @section('content_form')
 
-    <div class="form-group">
-        <label for="title">Titulo</label>
-        <input type="text" class="form-control" name="title" required placeholder="title..." value="{{ old('title')}}" autofocus>
-        <span class="invalid-feedback" role="alert"></span>
-    </div>
+    <x-forms.group title="Title" name="title">
+        <x-forms.input name="title" :value="old('title')" :required="true" placeholder="title..." autofocus />
+    </x-forms.group>
+    <x-forms.group title="Price" name="price">
+        <x-forms.input name="price" :value="old('price')" :required="true" placeholder="price..." />
+    </x-forms.group>
+    <x-forms.group title="Insert description" name="description">
+        <x-forms.textarea name="description" :value="old('description')" :required="true" placeholder="Enter ..." />
+    </x-forms.group>
+    <x-forms.group title="Image" name="image_url">
+        <x-forms.input name="image_url" :value="old('image_url')" :required="true" type="img" />
+    </x-forms.group>
 
-    <div class="form-group">
-        <label for="price">Precio</label>
-        <input type="text" class="form-control" name="price" required placeholder="price..." value="{{ old('price')}}">
-        <span class="invalid-feedback" role="alert"></span>
-    </div>
-    <div class="form-group">
-        <label for="description">inserte descripcion</label>
-        <textarea class="form-control" name="description" required placeholder="Enter ...">{{ old('description')}}</textarea>
-        <span class="invalid-feedback" role="alert"></span>
-    </div>
-    <div class="form-group">
-        <label for="image_url">Imagen</label>
-        <div class="input-group">
-            <div class="custom-file">
-                <input type="file" class="custom-file-input custom-file-input--img custom-file-input--img-preview" name="image_url" >
-                <label class="custom-file-label" for="image_url">Choose file</label>
-            </div>
-        </div>
-        <div class="input-group">
-            <div class="input-group-prepend">
-                <label class="input-group-text" for="image_url">
-                    <img id="image_url_img" src="hhhh" width="100" height="100" />
-                </label>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        CKEDITOR.replace( 'description' );
-    </script>
 @stop

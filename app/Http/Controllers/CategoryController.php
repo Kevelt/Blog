@@ -16,13 +16,16 @@ class CategoryController extends Controller
 
     public function create()
     {
-        return view('admin.categories.create');
+        $products = Product::all();
+
+        return view('admin.categories.create', ['products'=>$products]);
     }
 
     public function createAjax(Request $request)
     {
         $this->validate($request, [
             'name' => 'required',
+            'products' => 'required',
         ]);
 
         $data = $request->all();

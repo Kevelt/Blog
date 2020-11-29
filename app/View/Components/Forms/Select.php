@@ -14,11 +14,18 @@ class Select extends Component
     public $name;
 
     /**
-     * Show array values.
+     * Show object values.
      *
-     * @var array
+     * @var object
      */
     public $values;
+
+    /**
+     * Show text in option.
+     *
+     * @var string
+     */
+    public $text;
 
     /**
      * Is required.
@@ -42,6 +49,13 @@ class Select extends Component
     public $multiple;
 
     /**
+     * Show id in option.
+     *
+     * @var string
+     */
+    public $id;
+
+    /**
      * Determine if the given option is the current selected option.
      *
      * @param  string  $option
@@ -56,19 +70,23 @@ class Select extends Component
      * Create the component instance.
      *
      * @param  string  $name
-     * @param  string  $title
+     * @param  object  $values
+     * @param  string  $text
      * @param  bool  $required default:false
-     * @param  bool  $multiple default:false
      * @param  mixed  $selected default:false
+     * @param  bool  $multiple default:false
+     * @param  string  $id default:id
      * @return void
      */
-    public function __construct($name, $values = [], $required = false, $selected = null, $multiple = false)
+    public function __construct($name, $values, $text, $required = false, $selected = null, $multiple = false, $id = 'id')
     {
         $this->name = $name;
         $this->values = $values;
+        $this->text = $text;
         $this->required = $required;
         $this->selected = $selected;
         $this->multiple = $multiple;
+        $this->id = $id;
     }
 
     /**
@@ -79,10 +97,10 @@ class Select extends Component
     public function render()
     {
         return <<<'blade'
-            <select {{ $attributes->merge(['class' => 'form-control']) }} name="{{ $name }}" {{ $multiple ? 'multiple' : '' }} {{ $required ? 'required' : '' }}>
-                @foreach ($values as $value => $label)
-                    <option {{ $isSelected($value) ? 'selected' : '' }} value="{{ $value }}">
-                        {{ $label }}
+            <select {{ $attributes->merge(['class' => 'form-control']) }} name="{{ $name }}" id="{{ $name }}" {{ $multiple ? 'multiple' : '' }} {{ $required ? 'required' : '' }}>
+                @foreach ($values as $value)
+                    <option {{ $isSelected($value[$id]) ? 'selected' : '' }} value="{{ $value[$id] }}">
+                        {{ $value[$text] }}
                     </option>
                 @endforeach
             </select>
