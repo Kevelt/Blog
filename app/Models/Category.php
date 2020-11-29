@@ -21,7 +21,7 @@ class Category extends Model
      * @var array
      */
     protected $fillable = [
-        'title'
+        'title',
     ];
 
     /**
@@ -30,7 +30,7 @@ class Category extends Model
      * @var array
      */
     protected $hidden = [
-
+        'user_id',
     ];
 
 }
