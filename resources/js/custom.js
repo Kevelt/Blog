@@ -1,5 +1,6 @@
 require('./glide');
 import bsCustomFileInput from 'bs-custom-file-input';
+import { result } from 'lodash';
 
 $(document).ready(function(){
     bsCustomFileInput.init();
@@ -170,16 +171,44 @@ $(document).ready(function(){
         return arrayResult;
     }
 
-    async function formSendAjax(form) {
-        var data = {};
-        $.each(form.serializeArray(), function(i, v) {
-            data[v.name] = v.value;
-        });
-
-        const files = form.find('.custom-file-input--img');
-        for (const file of files) {
-            data[file.name] = await arrayImgConvert(file.files);
+    const obtainInputForm = async (form) => {
+        const inputList = form.find('input');
+        let result = {};
+        for (const input of inputList) {
+            if (input.type === 'file') {
+                if (input.classList.contains("custom-file-input--img")) result[input.name] = await arrayImgConvert(input.files);
+                else result[input.name] = input.files;
+            }
+            else result[input.name] = input.value;
         }
+        return result;
+    };
+
+    const obtainTextAreaForm = (form) => {
+        const textAreaList = form.find('textarea');
+        let result = {};
+        for (const textArea of textAreaList) {
+            result[textArea.name] = textArea.value;
+        }
+        return result;
+    };
+
+    const obtainSelectForm = (form) => {
+        const selectList = form.find('select');
+        let result = {};
+        for (const select of selectList) {
+            result[select.name] = Array.from(select.selectedOptions)
+            .map(option => option.value);
+        }
+        return result;
+    };
+
+    async function formSendAjax(form) {
+        var data = {
+            ...await obtainInputForm(form),
+            ...obtainTextAreaForm(form),
+            ...obtainSelectForm(form),
+        };
 
         $.ajax({
             url: form.attr('action'),
@@ -248,4 +277,13 @@ $(document).ready(function(){
     $( ".custom-file-input--img-preview" ).on("change", function() {
         previewImg(this.files, this.name + '_img');
     });
+
+    try {
+        $('.duallistbox').bootstrapDualListbox({
+            nonSelectedListLabel: 'Non-selected',
+            selectedListLabel: 'Selected',
+            preserveSelectionOnMove: 'moved',
+            moveOnSelect: false
+        });
+    } catch (error) {}
 });

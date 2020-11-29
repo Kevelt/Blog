@@ -43057,7 +43057,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var bs_custom_file_input__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! bs-custom-file-input */ "./node_modules/bs-custom-file-input/dist/bs-custom-file-input.js");
 /* harmony import */ var bs_custom_file_input__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(bs_custom_file_input__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_2__);
 
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
@@ -43070,6 +43078,7 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 __webpack_require__(/*! ./glide */ "./resources/js/glide.js");
+
 
 
 $(document).ready(function () {
@@ -43206,37 +43215,37 @@ $(document).ready(function () {
   }
 
   function _imgToBase() {
-    _imgToBase = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2(file) {
+    _imgToBase = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3(file) {
       var result;
-      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
         while (1) {
-          switch (_context2.prev = _context2.next) {
+          switch (_context3.prev = _context3.next) {
             case 0:
-              _context2.next = 2;
+              _context3.next = 2;
               return toBase64(file)["catch"](function (e) {
                 return Error(e);
               });
 
             case 2:
-              result = _context2.sent;
+              result = _context3.sent;
 
               if (!(result instanceof Error)) {
-                _context2.next = 6;
+                _context3.next = 6;
                 break;
               }
 
               console.log('Error: ', result.message);
-              return _context2.abrupt("return");
+              return _context3.abrupt("return");
 
             case 6:
-              return _context2.abrupt("return", result);
+              return _context3.abrupt("return", result);
 
             case 7:
             case "end":
-              return _context2.stop();
+              return _context3.stop();
           }
         }
-      }, _callee2);
+      }, _callee3);
     }));
     return _imgToBase.apply(this, arguments);
   }
@@ -43309,108 +43318,39 @@ $(document).ready(function () {
   }
 
   function _arrayImgConvert() {
-    _arrayImgConvert = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3(arrayImg) {
-      var arrayResult, _iterator, _step, file, config, resizedImage;
-
-      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
-        while (1) {
-          switch (_context3.prev = _context3.next) {
-            case 0:
-              arrayResult = [];
-              _iterator = _createForOfIteratorHelper(arrayImg);
-              _context3.prev = 2;
-
-              _iterator.s();
-
-            case 4:
-              if ((_step = _iterator.n()).done) {
-                _context3.next = 13;
-                break;
-              }
-
-              file = _step.value;
-              config = {
-                file: file,
-                maxSize: 450
-              };
-              _context3.next = 9;
-              return resizeImage(config);
-
-            case 9:
-              resizedImage = _context3.sent;
-              arrayResult.push(resizedImage);
-
-            case 11:
-              _context3.next = 4;
-              break;
-
-            case 13:
-              _context3.next = 18;
-              break;
-
-            case 15:
-              _context3.prev = 15;
-              _context3.t0 = _context3["catch"](2);
-
-              _iterator.e(_context3.t0);
-
-            case 18:
-              _context3.prev = 18;
-
-              _iterator.f();
-
-              return _context3.finish(18);
-
-            case 21:
-              return _context3.abrupt("return", arrayResult);
-
-            case 22:
-            case "end":
-              return _context3.stop();
-          }
-        }
-      }, _callee3, null, [[2, 15, 18, 21]]);
-    }));
-    return _arrayImgConvert.apply(this, arguments);
-  }
-
-  function formSendAjax(_x3) {
-    return _formSendAjax.apply(this, arguments);
-  }
-
-  function _formSendAjax() {
-    _formSendAjax = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee4(form) {
-      var data, files, _iterator2, _step2, file;
+    _arrayImgConvert = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee4(arrayImg) {
+      var arrayResult, _iterator4, _step4, file, config, resizedImage;
 
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee4$(_context4) {
         while (1) {
           switch (_context4.prev = _context4.next) {
             case 0:
-              data = {};
-              $.each(form.serializeArray(), function (i, v) {
-                data[v.name] = v.value;
-              });
-              files = form.find('.custom-file-input--img');
-              _iterator2 = _createForOfIteratorHelper(files);
-              _context4.prev = 4;
+              arrayResult = [];
+              _iterator4 = _createForOfIteratorHelper(arrayImg);
+              _context4.prev = 2;
 
-              _iterator2.s();
+              _iterator4.s();
 
-            case 6:
-              if ((_step2 = _iterator2.n()).done) {
+            case 4:
+              if ((_step4 = _iterator4.n()).done) {
                 _context4.next = 13;
                 break;
               }
 
-              file = _step2.value;
-              _context4.next = 10;
-              return arrayImgConvert(file.files);
+              file = _step4.value;
+              config = {
+                file: file,
+                maxSize: 450
+              };
+              _context4.next = 9;
+              return resizeImage(config);
 
-            case 10:
-              data[file.name] = _context4.sent;
+            case 9:
+              resizedImage = _context4.sent;
+              arrayResult.push(resizedImage);
 
             case 11:
-              _context4.next = 6;
+              _context4.next = 4;
               break;
 
             case 13:
@@ -43419,18 +43359,187 @@ $(document).ready(function () {
 
             case 15:
               _context4.prev = 15;
-              _context4.t0 = _context4["catch"](4);
+              _context4.t0 = _context4["catch"](2);
 
-              _iterator2.e(_context4.t0);
+              _iterator4.e(_context4.t0);
 
             case 18:
               _context4.prev = 18;
 
-              _iterator2.f();
+              _iterator4.f();
 
               return _context4.finish(18);
 
             case 21:
+              return _context4.abrupt("return", arrayResult);
+
+            case 22:
+            case "end":
+              return _context4.stop();
+          }
+        }
+      }, _callee4, null, [[2, 15, 18, 21]]);
+    }));
+    return _arrayImgConvert.apply(this, arguments);
+  }
+
+  var obtainInputForm = /*#__PURE__*/function () {
+    var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2(form) {
+      var inputList, result, _iterator, _step, input;
+
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              inputList = form.find('input');
+              result = {};
+              _iterator = _createForOfIteratorHelper(inputList);
+              _context2.prev = 3;
+
+              _iterator.s();
+
+            case 5:
+              if ((_step = _iterator.n()).done) {
+                _context2.next = 20;
+                break;
+              }
+
+              input = _step.value;
+
+              if (!(input.type === 'file')) {
+                _context2.next = 17;
+                break;
+              }
+
+              if (!input.classList.contains("custom-file-input--img")) {
+                _context2.next = 14;
+                break;
+              }
+
+              _context2.next = 11;
+              return arrayImgConvert(input.files);
+
+            case 11:
+              result[input.name] = _context2.sent;
+              _context2.next = 15;
+              break;
+
+            case 14:
+              result[input.name] = input.files;
+
+            case 15:
+              _context2.next = 18;
+              break;
+
+            case 17:
+              result[input.name] = input.value;
+
+            case 18:
+              _context2.next = 5;
+              break;
+
+            case 20:
+              _context2.next = 25;
+              break;
+
+            case 22:
+              _context2.prev = 22;
+              _context2.t0 = _context2["catch"](3);
+
+              _iterator.e(_context2.t0);
+
+            case 25:
+              _context2.prev = 25;
+
+              _iterator.f();
+
+              return _context2.finish(25);
+
+            case 28:
+              return _context2.abrupt("return", result);
+
+            case 29:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2, null, [[3, 22, 25, 28]]);
+    }));
+
+    return function obtainInputForm(_x3) {
+      return _ref2.apply(this, arguments);
+    };
+  }();
+
+  var obtainTextAreaForm = function obtainTextAreaForm(form) {
+    var textAreaList = form.find('textarea');
+    var result = {};
+
+    var _iterator2 = _createForOfIteratorHelper(textAreaList),
+        _step2;
+
+    try {
+      for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+        var textArea = _step2.value;
+        result[textArea.name] = textArea.value;
+      }
+    } catch (err) {
+      _iterator2.e(err);
+    } finally {
+      _iterator2.f();
+    }
+
+    return result;
+  };
+
+  var obtainSelectForm = function obtainSelectForm(form) {
+    var selectList = form.find('select');
+    var result = {};
+
+    var _iterator3 = _createForOfIteratorHelper(selectList),
+        _step3;
+
+    try {
+      for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
+        var select = _step3.value;
+        result[select.name] = Array.from(select.selectedOptions).map(function (option) {
+          return option.value;
+        });
+      }
+    } catch (err) {
+      _iterator3.e(err);
+    } finally {
+      _iterator3.f();
+    }
+
+    return result;
+  };
+
+  function formSendAjax(_x4) {
+    return _formSendAjax.apply(this, arguments);
+  }
+
+  function _formSendAjax() {
+    _formSendAjax = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee5(form) {
+      var data;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee5$(_context5) {
+        while (1) {
+          switch (_context5.prev = _context5.next) {
+            case 0:
+              _context5.t0 = _objectSpread;
+              _context5.t1 = _objectSpread;
+              _context5.t2 = _objectSpread;
+              _context5.t3 = {};
+              _context5.next = 6;
+              return obtainInputForm(form);
+
+            case 6:
+              _context5.t4 = _context5.sent;
+              _context5.t5 = (0, _context5.t2)(_context5.t3, _context5.t4);
+              _context5.t6 = obtainTextAreaForm(form);
+              _context5.t7 = (0, _context5.t1)(_context5.t5, _context5.t6);
+              _context5.t8 = obtainSelectForm(form);
+              data = (0, _context5.t0)(_context5.t7, _context5.t8);
               $.ajax({
                 url: form.attr('action'),
                 type: 'POST',
@@ -43458,12 +43567,12 @@ $(document).ready(function () {
                 }
               });
 
-            case 22:
+            case 13:
             case "end":
-              return _context4.stop();
+              return _context5.stop();
           }
         }
-      }, _callee4, null, [[4, 15, 18, 21]]);
+      }, _callee5);
     }));
     return _formSendAjax.apply(this, arguments);
   }
@@ -43500,30 +43609,30 @@ $(document).ready(function () {
     }
   });
 
-  function previewImg(_x4, _x5) {
+  function previewImg(_x5, _x6) {
     return _previewImg.apply(this, arguments);
   }
 
   function _previewImg() {
-    _previewImg = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee5(img, name) {
+    _previewImg = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee6(img, name) {
       var imgTemp;
-      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee5$(_context5) {
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee6$(_context6) {
         while (1) {
-          switch (_context5.prev = _context5.next) {
+          switch (_context6.prev = _context6.next) {
             case 0:
-              _context5.next = 2;
+              _context6.next = 2;
               return arrayImgConvert(img);
 
             case 2:
-              imgTemp = _context5.sent;
+              imgTemp = _context6.sent;
               $('#' + name).attr('src', imgTemp[0]);
 
             case 4:
             case "end":
-              return _context5.stop();
+              return _context6.stop();
           }
         }
-      }, _callee5);
+      }, _callee6);
     }));
     return _previewImg.apply(this, arguments);
   }
@@ -43531,6 +43640,15 @@ $(document).ready(function () {
   $(".custom-file-input--img-preview").on("change", function () {
     previewImg(this.files, this.name + '_img');
   });
+
+  try {
+    $('.duallistbox').bootstrapDualListbox({
+      nonSelectedListLabel: 'Non-selected',
+      selectedListLabel: 'Selected',
+      preserveSelectionOnMove: 'moved',
+      moveOnSelect: false
+    });
+  } catch (error) {}
 });
 
 /***/ }),
